@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Lista de Presentes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob shape-1"></div>
+        <div class="blob shape-2"></div>
+    </div>
+
+    <main class="container">
+        <header class="glass-header">
+            <h1>Lista de Presentes</h1>
+            <p>Nos ajude a montar o nosso lar com muito amor! 💍</p>
+        </header>
+
+        <section class="controls glass-panel">
+            <button class="btn btn-primary" id="btn-add">Adicionar Item</button>
+            <div class="filter-group">
+                <label for="filter-category">Categoria:</label>
+                <select id="filter-category">
+                    <option value="all">Todas</option>
+                    <option value="Eletrodomésticos">Eletrodomésticos</option>
+                    <option value="Móveis">Móveis</option>
+                    <option value="Eletroportáteis">Eletroportáteis</option>
+                </select>
+            </div>
+        </section>
+
+        <div class="gifts-grid" id="gifts-grid">
+            <!-- Cards gerados via JS -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
