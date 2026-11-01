@@ -22,7 +22,7 @@
         </header>
 
         <section class="controls glass-panel">
-            <button class="btn btn-primary" id="btn-add">Adicionar Item</button>
+            <button class="btn btn-primary" id="btn-add" type="button" hidden>Adicionar Item</button>
             <div class="filter-group">
                 <label for="filter-category">Categoria:</label>
                 <select id="filter-category">
@@ -30,14 +30,103 @@
                     <option value="Eletrodomésticos">Eletrodomésticos</option>
                     <option value="Móveis">Móveis</option>
                     <option value="Eletroportáteis">Eletroportáteis</option>
+                    <option value="Roupas">Roupas</option>
+                    <option value="Utensílios">Utensílios</option>
+                    <option value="Contribuição">Contribuição</option>
+                    <option value="Outros">Outros</option>
                 </select>
             </div>
         </section>
+
+        <p class="app-message" id="app-message" role="status" aria-live="polite"></p>
 
         <div class="gifts-grid" id="gifts-grid">
             <!-- Cards gerados via JS -->
         </div>
     </main>
+
+    <dialog class="app-modal glass-panel" id="gift-modal">
+        <form class="modal-form" id="gift-form">
+            <div class="modal-heading">
+                <h2 id="gift-modal-title">Adicionar item</h2>
+                <button class="modal-close" type="button" data-close="gift-modal" aria-label="Fechar">×</button>
+            </div>
+            <label for="gift-name">Nome *</label>
+            <input id="gift-name" name="name" type="text" maxlength="120" required>
+
+            <label for="gift-category">Categoria *</label>
+            <select id="gift-category" name="category" required>
+                <option value="">Selecione uma categoria</option>
+                <option value="Eletrodomésticos">Eletrodomésticos</option>
+                <option value="Móveis">Móveis</option>
+                <option value="Eletroportáteis">Eletroportáteis</option>
+                <option value="Roupas">Roupas</option>
+                <option value="Utensílios">Utensílios</option>
+                <option value="Contribuição">Contribuição</option>
+                <option value="Outros">Outros</option>
+            </select>
+
+            <label for="gift-priority">Prioridade *</label>
+            <select id="gift-priority" name="priority" required>
+                <option value="Alta">Alta</option>
+                <option value="Média" selected>Média</option>
+                <option value="Baixa">Baixa</option>
+            </select>
+
+            <label for="gift-price">Preço (R$)</label>
+            <input id="gift-price" name="price" type="number" min="0" step="0.01" inputmode="decimal">
+
+            <label for="gift-link">Link do produto</label>
+            <input id="gift-link" name="link" type="url" maxlength="2048" placeholder="https://">
+
+            <p class="form-error" id="gift-form-error" role="alert"></p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" type="button" data-close="gift-modal">Cancelar</button>
+                <button class="btn btn-primary" type="submit">Salvar item</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="app-modal glass-panel" id="present-modal">
+        <form class="modal-form" id="present-form">
+            <div class="modal-heading">
+                <h2>Quero presentear</h2>
+                <button class="modal-close" type="button" data-close="present-modal" aria-label="Fechar">×</button>
+            </div>
+            <label for="guest-name">Seu nome *</label>
+            <input id="guest-name" name="guestName" type="text" maxlength="100" autocomplete="name" required>
+
+            <label for="guest-message">Mensagem (opcional)</label>
+            <textarea id="guest-message" name="message" rows="3" maxlength="500"></textarea>
+
+            <p class="form-error" id="present-form-error" role="alert"></p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" type="button" data-close="present-modal">Cancelar</button>
+                <button class="btn btn-primary" type="submit">Confirmar presente</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="app-modal glass-panel" id="admin-modal">
+        <form class="modal-form" id="admin-form">
+            <div class="modal-heading">
+                <h2 id="admin-modal-title">Acesso administrador</h2>
+                <button class="modal-close" type="button" data-close="admin-modal" aria-label="Fechar">×</button>
+            </div>
+            <p class="modal-description" id="admin-modal-description"></p>
+            <label for="admin-password" id="admin-password-label">Senha *</label>
+            <input id="admin-password" name="password" type="password" minlength="8" autocomplete="current-password" required>
+            <div id="admin-confirm-group" hidden>
+                <label for="admin-password-confirm">Confirme a senha *</label>
+                <input id="admin-password-confirm" name="passwordConfirm" type="password" minlength="8" autocomplete="new-password">
+            </div>
+            <p class="form-error" id="admin-form-error" role="alert"></p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" type="button" data-close="admin-modal">Cancelar</button>
+                <button class="btn btn-primary" type="submit" id="admin-submit">Entrar</button>
+            </div>
+        </form>
+    </dialog>
 
     <script src="script.js"></script>
 </body>

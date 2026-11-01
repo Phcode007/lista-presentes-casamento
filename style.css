@@ -128,6 +128,20 @@ body {
     transition: all 0.3s ease;
 }
 
+.btn:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--primary-dark);
+    outline-offset: 2px;
+}
+
+.btn[hidden],
+[hidden] {
+    display: none !important;
+}
+
 .btn-primary {
     background: var(--primary-color);
     color: white;
@@ -138,6 +152,17 @@ body {
     background: var(--primary-dark);
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(209, 187, 164, 0.5);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.75);
+    color: var(--text-color);
+    border: 1px solid rgba(135, 120, 105, 0.2);
+}
+
+.btn-danger {
+    background: #f7e4df;
+    color: #a6442e;
 }
 
 .filter-group {
@@ -195,7 +220,7 @@ body {
     font-size: 0.75rem;
     padding: 0.25rem 0.75rem;
     border-radius: 999px;
-    color: white;
+    color: var(--text-color);
     font-weight: 600;
 }
 
@@ -207,6 +232,28 @@ body {
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--text-color);
+    overflow-wrap: anywhere;
+}
+
+.gift-price {
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.gift-link {
+    color: #806b55;
+    font-weight: 500;
+    text-underline-offset: 0.2em;
+}
+
+.gift-reserved-by {
+    font-weight: 600;
+    color: #547a64;
+}
+
+.gift-message {
+    color: var(--text-light);
+    overflow-wrap: anywhere;
 }
 
 .gift-status {
@@ -242,10 +289,135 @@ body {
     color: white;
 }
 
+.gift-admin-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.gift-admin-actions .btn {
+    flex: 1;
+    padding: 0.6rem 0.75rem;
+}
+
+.app-message {
+    min-height: 1.5rem;
+    margin: -1rem 0 1rem;
+    color: #547a64;
+}
+
+.app-message.is-error,
+.form-error {
+    color: #a6442e;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.app-modal {
+    width: min(92vw, 480px);
+    max-height: 90vh;
+    margin: auto;
+    padding: 0;
+    color: var(--text-color);
+    background: rgba(253, 251, 247, 0.94);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(80, 65, 50, 0.25);
+}
+
+.app-modal::backdrop {
+    background: rgba(51, 45, 39, 0.35);
+    backdrop-filter: blur(5px);
+}
+
+.modal-form {
+    display: grid;
+    gap: 0.65rem;
+    padding: 1.75rem;
+    overflow-y: auto;
+}
+
+.modal-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-heading h2 {
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+}
+
+.modal-close {
+    border: 0;
+    background: transparent;
+    color: var(--text-light);
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.modal-form label {
+    margin-top: 0.35rem;
+    font-weight: 500;
+}
+
+.modal-form input,
+.modal-form select,
+.modal-form textarea {
+    width: 100%;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid rgba(135, 120, 105, 0.25);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--text-color);
+    font: inherit;
+}
+
+.modal-form textarea {
+    resize: vertical;
+}
+
+.modal-description {
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.form-error {
+    min-height: 1.25rem;
+    font-size: 0.9rem;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 0.35rem;
+}
+
 @media (max-width: 768px) {
     .controls {
         flex-direction: column;
         gap: 1rem;
         align-items: flex-start;
+    }
+
+    .modal-form {
+        padding: 1.25rem;
+    }
+
+    .modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .modal-actions .btn {
+        width: 100%;
     }
 }
