@@ -1,4 +1,4 @@
-const API_URL = 'https://ep-autumn-night-b4ewjxty.apirest.c-6.us-east-2.aws.neon.tech/neondb/rest/v1';
+const API_URL = 'https://lista-presentes-casamento-91qe.onrender.com';
 const ADMIN_TOKEN_KEY = 'lista-presentes-admin-token';
 const categories = ['Eletrodomésticos', 'Móveis', 'Eletroportáteis', 'Roupas', 'Utensílios', 'Contribuição', 'Outros'];
 const giftsGrid = document.getElementById('gifts-grid');
