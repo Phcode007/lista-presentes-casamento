@@ -240,6 +240,26 @@ a:focus-visible {
     color: var(--primary-dark);
 }
 
+.gift-brand,
+.gift-pix-key {
+    color: var(--text-light);
+    overflow-wrap: anywhere;
+}
+
+.checkbox-field {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.modal-form .checkbox-field input {
+    width: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    accent-color: var(--primary-dark);
+}
+
 .gift-link {
     color: #806b55;
     font-weight: 500;
